@@ -21,9 +21,8 @@ public class Listeners implements Listener {
     Map<Player, ItemStack> playerItemMap;
     Map<Player, Integer> playerExpMap;   // can all repair -> true
 
-    public Listeners (Map<Player, ItemStack> playerItemMap, Map<Player, Integer> playerExpMap) {
-        this.playerItemMap = playerItemMap;
-        this.playerExpMap = playerExpMap;
+    public void registerListener(RepairToolsWithCrafting plugin){
+        plugin.getServer().getPluginManager().registerEvents(this,plugin);
     }
 
     @EventHandler

@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class RepairToolsWithCrafting extends JavaPlugin {
-    Map<Player, ItemStack> playerItemMap = new HashMap<>();
-    Map<Player, Integer> playerExpMap = new HashMap<>(); // last exp value
+    private static Listeners eventHandlers = null;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        getServer().getPluginManager().registerEvents(new Listeners(playerItemMap, playerExpMap), this);
+        eventHandlers = new Listeners();
+        eventHandlers.registerListener(this);
+
     }
 
     @Override
