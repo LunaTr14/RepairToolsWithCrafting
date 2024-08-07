@@ -1,0 +1,4 @@
+name: RepairToolsWithCrafting
+version: '${project.version}'
+main: com.ponchannn.repairtoolswithcrafting.RepairToolsWithCrafting
+api-version: '1.21'
