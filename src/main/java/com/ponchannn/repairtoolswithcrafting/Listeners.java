@@ -38,6 +38,11 @@ public class Listeners implements Listener {
                 Damageable craftItemMeta = (Damageable) craftItem.getItemMeta();
                 if (craftItemMeta.getDamage() <= 0 && player.getLevel() <= 0) return;
                 int currentDamage = craftItemMeta.getDamage();
+                int playerLevels = player.getLevel();
+                if (playerLevels > 0) {
+                    int expToRepair = Math.round((float) Math.log10(currentDamage) * 5);
+                    if (expToRepair > playerLevels) {
+                        return;
                     }
                     playerExpMap.put(player, 0);
 
