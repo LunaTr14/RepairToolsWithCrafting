@@ -41,7 +41,9 @@ public class Listeners implements Listener {
                 int playerLevels = player.getLevel();
                 if (playerLevels > 0) {
                     int expToRepair = Math.round((float) Math.log10(currentDamage) * 5);
+                    event.getView().setTitle("§a EXP Required:" + expToRepair);
                     if (expToRepair > playerLevels) {
+                        event.getView().setTitle("§4 EXP Required: " + expToRepair);
                         return;
                     }
                     playerExpMap.put(player, 0);
